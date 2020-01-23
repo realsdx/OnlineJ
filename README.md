@@ -28,3 +28,10 @@ Get Redis install and running on your machine follow the [guide](https://www.dig
 To start a constest on the app, first a setter has to be made. Only a admin can appoint a setter. Then a setter can host a contest. A contest can have many problems in it. A problem will have associated languages and many submission by different users.
 
 Note: When creating a language make sure to use the name provided by the codemirror modes E.g for C language.name="text/x-csrc", the language code could be the language name we generally use like C/C++, JAVA
+
+
+## Update
+* Changed Ruby Version to 2.6.5
+* run `bundle update rails`
+* run `gem install ice_cube`
+* Change occurances of Fixnum to Integer
