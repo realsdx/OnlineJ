@@ -99,6 +99,9 @@ $(document).on('turbolinks:load', function() {
     lang_name.name ='lang_name';
     lang_name.value = cEditor.getOption('mode');
     // lang_name.value = $("#select2-chosen-1").text().toLowerCase();
+    var lang_code = document.createElement('input');
+    lang_code.name = 'lang_code';
+    lang_code.value = $('#mode option:selected').text();
     var ccode = document.createElement('input');
     ccode.name = 'ccode';
     ccode.value = gon.contest;
@@ -111,6 +114,7 @@ $(document).on('turbolinks:load', function() {
     form.appendChild(authenticity_token);
     form.appendChild(user_source_code);
     form.appendChild(lang_name);
+    form.appendChild(lang_code);
     form.appendChild(ccode);
     form.appendChild(pcode);
     form.appendChild(test);

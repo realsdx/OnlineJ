@@ -26,8 +26,10 @@ class SubmissionController < ApplicationController
     pcode = params[:pcode]
     user_source_code = params[:user_source_code]
     language_name = params[:lang_name]
+    language_code = params[:lang_code]
     test = params[:test]
-    language = Language.by_name(language_name).first
+    # language = Language.by_name(language_name).first
+    language = Language.by_lang_code(language_code).first
     if language.nil?
       render(file: 'public/404.html', status: :not_found, layout: false) && return
     end
