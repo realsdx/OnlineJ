@@ -7,7 +7,7 @@ class ProcessSubmissionWorker
     submission_id = args['submission_id']
     submission = Submission.by_id(submission_id).first
     return if submission.nil? || submission[:status_code] != 'PE'
-    ext_hash = { 'c++' => '.cpp', 'java' => '.java', 'python' => '.py', 'c' => '.c', 'ruby' => '.rb' }
+    ext_hash = { 'c++' => '.cpp', 'java' => '.java', 'python' => '.py', 'python3' => '.py', 'c' => '.c', 'ruby' => '.rb' }
     problem = submission.problem
     contest = problem.contest
     testcases = problem.test_cases
@@ -35,6 +35,8 @@ class ProcessSubmissionWorker
       compilation = "bash -c 'javac Main#{ext_hash[lang_code]} &> compile_log'"
     elsif lang_code == 'python'
       compilation = "bash -c 'python -m py_compile user_source_code#{ext_hash[lang_code]} &> compile_log'"
+    elsif lang_code == 'python3'
+      compilation = "bash -c 'python3 -m py_compile user_source_code#{ext_hash[lang_code]} &> compile_log'"
     elsif lang_code == 'ruby'
       compilation = "bash -c 'ruby -wc user_source_code#{ext_hash[lang_code]} &> compile_log'"
     end

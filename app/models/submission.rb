@@ -24,7 +24,7 @@ class Submission
   after_destroy :delete_submission_data
 
   def create_submission_data
-    ext_hash = { 'c++' => '.cpp', 'java' => '.java', 'python' => '.py', 'c' => '.c', 'ruby' => '.rb' }
+    ext_hash = { 'c++' => '.cpp', 'java' => '.java', 'python' => '.py', 'python3' => '.py', 'c' => '.c', 'ruby' => '.rb' }
     problem = self.problem
     ccode = problem.contest[:ccode]
     user_email = user[:email]
