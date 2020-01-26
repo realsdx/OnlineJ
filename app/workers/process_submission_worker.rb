@@ -94,7 +94,7 @@ class ProcessSubmissionWorker
         if lang_code == 'c' || lang_code == 'c++'
           execution = "bash -c 'sudo #{judge_path} --cpu #{tlim} --mem #{mlim} --usage #{submission_path}usage_log --exec #{submission_path}compiled_code < #{problem_path}#{testcase[:name]}/testcase' > #{submission_path}#{testcase[:name]}/testcase_output"
         elsif lang_code == 'java'
-          execution = "bash -c 'sudo #{judge_path} --cpu #{tlim} --mem #{mlim} --nproc 15  --usage #{submission_path}usage_log --exec /usr/bin/java -cp #{submission_path} Main < #{problem_path}#{testcase[:name]}/testcase' > #{submission_path}#{testcase[:name]}/testcase_output"
+          execution = "bash -c 'sudo #{judge_path} --cpu #{tlim} --mem #{mlim} --nproc 50  --usage #{submission_path}usage_log --exec /usr/bin/java -cp #{submission_path} Main < #{problem_path}#{testcase[:name]}/testcase' > #{submission_path}#{testcase[:name]}/testcase_output"
         else
           execution = "bash -c 'sudo #{judge_path} --cpu #{tlim} --mem #{mlim} --usage #{submission_path}usage_log --exec /usr/bin/#{lang_code} #{submission_path}user_source_code#{ext_hash[lang_code]} < #{problem_path}#{testcase[:name]}/testcase' > #{submission_path}#{testcase[:name]}/testcase_output"
         end
