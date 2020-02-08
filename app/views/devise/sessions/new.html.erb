@@ -5,20 +5,9 @@
 			<div class="col-md-4 col-md-offset-4">
 				<div class="card card-signup">
 						<div class="header header-success text-center">
-							<h4>Log in</h4>
-							<div class="social-line">
-								<a href="/users/auth/facebook" class="btn btn-simple btn-just-icon">
-									<i class="fa fa-facebook-square"></i>
-								</a>
-								<a href="/users/auth/github" class="btn btn-simple btn-just-icon">
-									<i class="fa fa-github" aria-hidden="true"></i>
-								</a>
-								<a href="/users/auth/google" class="btn btn-simple btn-just-icon">
-									<i class="fa fa-google-plus"></i>
-								</a>
-							</div>
+							<h2>Log in</h2>
 						</div>
-						<p class="text-divider">Or</p>
+						<p class="text-divider"></p>
 						<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
 						<div class="content">
 							<div class="input-group">
